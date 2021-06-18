@@ -30,6 +30,9 @@ class Header extends Component
                 ],
                 'Usulan' => [
                     'route' => 'usulan'
+                ],
+                'Kontak Kami' => [
+                    'route' => 'kontak'
                 ]
             ]
 

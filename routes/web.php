@@ -4,6 +4,7 @@ use App\Http\Livewire\Pages\Denda;
 use App\Http\Livewire\Pages\Home;
 use App\Http\Livewire\Pages\Koleksi;
 use App\Http\Livewire\Pages\Koleksi\Detail;
+use App\Http\Livewire\Pages\Kontak;
 use App\Http\Livewire\Pages\Pembayaran;
 use App\Http\Livewire\Pages\Peminjaman;
 use App\Http\Livewire\Pages\Usulan;
@@ -34,6 +35,7 @@ Route::middleware(['auth', 'checkRole:user'])->group(function () {
     Route::get('/denda', Denda::class)->name('denda');
 });
 Route::get('/usulan', Usulan::class)->name('usulan');
+Route::get('/kontak-kami', Kontak::class)->name('kontak');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
