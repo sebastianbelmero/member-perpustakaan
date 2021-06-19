@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Pages;
 
 use App\Models\Proposal;
+use Illuminate\Support\Facades\Validator;
 use Livewire\Component;
 
 class Usulan extends Component
@@ -12,12 +13,20 @@ class Usulan extends Component
 
     public function tambahUsulan()
     {
-        $berhasil = Proposal::create([
-            'judul' => $this->judul,
-            'penerbit' => $this->penerbit,
-            'pengarang' => $this->pengarang,
-
-        ]);
+        $validatedData = Validator::make(
+            [
+                'judul' => $this->judul,
+                'penerbit' => $this->penerbit,
+                'pengarang' => $this->pengarang
+            ],
+            [
+                'judul' => 'required',
+            ],
+            [
+                'required' => ':attribute tidak boleh kosong!',
+            ],
+        )->validate();
+        $berhasil = Proposal::create($validatedData);
         if ($berhasil) {
             $this -> status = [
                 "text" => "Usulan Anda Berhasil Ditambahkan",
