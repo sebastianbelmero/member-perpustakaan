@@ -22,12 +22,6 @@ class Header extends Component
                 'Peminjaman' => [
                     'route' => 'peminjaman'
                 ],
-                'Pembayaran' => [
-                    'route' => 'pembayaran'
-                ],
-                'Denda' => [
-                    'route' => 'denda'
-                ],
                 'Usulan' => [
                     'route' => 'usulan'
                 ],

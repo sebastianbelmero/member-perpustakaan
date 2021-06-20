@@ -7,6 +7,8 @@ use App\Http\Livewire\Pages\Koleksi\Detail;
 use App\Http\Livewire\Pages\Kontak;
 use App\Http\Livewire\Pages\Pembayaran;
 use App\Http\Livewire\Pages\Peminjaman;
+use App\Http\Livewire\Pages\Pinjam\DetailPinjam;
+use App\Http\Livewire\Pages\Profile;
 use App\Http\Livewire\Pages\Usulan;
 use Illuminate\Support\Facades\Route;
 
@@ -33,12 +35,12 @@ Route::middleware(['auth', 'checkRole:user'])->group(function () {
     Route::get('/peminjaman', Peminjaman::class)->name('peminjaman');
     Route::get('/pembayaran', Pembayaran::class)->name('pembayaran');
     Route::get('/denda', Denda::class)->name('denda');
+    Route::get('/detail-pinjam/{id}', DetailPinjam::class)->name('detail-pinjam');
+    Route::get('/profile', Profile::class)->name('profile');
 });
 Route::get('/usulan', Usulan::class)->name('usulan');
 Route::get('/kontak-kami', Kontak::class)->name('kontak');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard', Home::class)->name('dashboard');
 
 require __DIR__.'/auth.php';

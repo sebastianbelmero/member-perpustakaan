@@ -1,4 +1,4 @@
-<div class="container mx-auto relative overflow-hidden">
+<div class="container mx-auto relative overflow-hidden mt-24">
     @if ($status)
     <div class="confirm-borrow absolute w-full flex justify-end z-10">
         <div class="bg-blue-400 px-2 py-5 rounded w-48">

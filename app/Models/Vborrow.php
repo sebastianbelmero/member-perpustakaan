@@ -5,8 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Vbook extends Model
+class Vborrow extends Model
 {
     use HasFactory;
-    protected $table = 'v_books';
+    protected $table = 'v_borrows';
+    protected $primarykey = 'id';
 }

@@ -51,6 +51,26 @@
                         >
                     </li>
                     @endforeach
+
+                    @guest
+                    @else
+                    <li>
+                        <a
+                            href="{{ route('profile') }}"
+                            aria-label="Our product"
+                            title="Our product"
+                            class="
+                                font-medium
+                                tracking-wide
+                                text-gray-100
+                                transition-colors
+                                duration-200
+                                hover:text-teal-accent-400
+                            "
+                            >Profile</a
+                        >
+                    </li>
+                    @endguest
                 </ul>
             </div>
             <ul class="flex items-center hidden space-x-8 lg:flex">
@@ -211,6 +231,25 @@
                                     >
                                 </li>
                                 @endforeach
+                                @guest
+                                @else
+                                <li>
+                                    <a
+                                        href="{{ route('profile') }}"
+                                        aria-label="Our product"
+                                        title="Our product"
+                                        class="
+                                            font-medium
+                                            tracking-wide
+                                            text-gray-700
+                                            transition-colors
+                                            duration-200
+                                            hover:text-deep-purple-accent-400
+                                        "
+                                        >Profile</a
+                                    >
+                                </li>
+                                @endguest
                                 <li>
                                     @guest
                                     <a
