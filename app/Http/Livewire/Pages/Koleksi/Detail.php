@@ -20,7 +20,8 @@ class Detail extends Component
     public function render()
     {
         $book = Vbook::findOrFail($this->idBuku);
-        return view('livewire.pages.koleksi.detail', compact('book'));
+        $pinjam = Borrow::where('id_buku', '=', $this->idBuku)->where('status', '=', 2)->count();
+        return view('livewire.pages.koleksi.detail', compact('book', 'pinjam'));
     }
 
     public function pinjam()

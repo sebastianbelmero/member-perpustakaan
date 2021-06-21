@@ -42,7 +42,7 @@
 						Email : {{ $book -> email }}
 					</div>
 					<div class="text-gray-900">
-						Jumlah : {{ $book -> jumlah }}
+						Jumlah : {{ $book -> jumlah - $pinjam }}
 					</div>
 					<div class="text-gray-900">
 						Kategori : {{ $book -> kategori }}
@@ -52,7 +52,11 @@
 					@guest
 					<button class="bg-blue-300 text-white px-2 py-1 rounded focus:outline-none">Pinjam</button>
 					@else
+					@if ($book -> jumlah - $pinjam == 0)
+					<button disabled class="bg-blue-300 text-white px-2 py-1 rounded">Habis</button>
+					@else
 					<button wire:click="$set('bukuId', {{ $book -> id }})" class="bg-blue-500 hover:bg-blue-700 text-white px-2 py-1 rounded">Pinjam</button>
+					@endif
 					@endguest
 					<a href="{{ route('koleksi') }}" class="bg-gray-500 hover:bg-gray-700 text-white px-2 py-1 rounded">Koleksi</a>
 				</div>
