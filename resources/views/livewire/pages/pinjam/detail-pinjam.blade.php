@@ -29,7 +29,19 @@
         </tr>
         <tr>
             <th>Status</th>
-            <td class="p-1"> : {{ $borrow['status'] }}</td>
+            <td class="p-1"> : 
+                @if ($borrow['status'] == 0)
+                Pending
+                @elseif ($borrow['status'] == 1)
+                Terkonfirmasi
+                @elseif ($borrow['status'] == 2)
+                Sedang Dipinjam
+                @elseif ($borrow['status'] == 3)
+                Selesai
+                @elseif ($borrow['status'] == 4)
+                Batal
+                @endif
+            </td>
         </tr>
     </table>
     <button wire:click="kembali" class="px-2 py-1 bg-blue-500 hover:bg-blue-600 rounded text-white mt-5"><i class="bi bi-arrow-left"></i> Kembali</button>
