@@ -21,6 +21,8 @@ class Usulan extends Component
             ],
             [
                 'judul' => 'required',
+                'penerbit' => '',
+                'pengarang' => '',
             ],
             [
                 'required' => ':attribute tidak boleh kosong!',
