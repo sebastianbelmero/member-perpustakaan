@@ -1,6 +1,6 @@
-<div class="container mx-auto py-5">
+<div class="container mx-auto py-5 px-24">
     <h1 class="text-4xl">Profile {{ Auth::user()->name }}</h1>
-    <div class="w-1/2 p-1">
+    <div class="w-1/2 p-1 mt-5">
         <label for="nama">Nama : </label>
         <input disabled value="{{ Auth::user()->name }}" class="w-full px-2 py-1 rounded" type="text" placeholder="Nama" id="nama">
     </div>
