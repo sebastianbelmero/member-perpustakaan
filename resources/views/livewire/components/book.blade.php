@@ -1,6 +1,6 @@
 <div class="w-full lg:w-1/2 p-3">
     <figure class="md:flex bg-gray-100 rounded-xl p-8 md:p-0">
-      <img class="w-32 h-32 md:w-48 md:h-auto mx-auto" src="{{ asset('img-book.png') }}" alt="" width="384" height="512">
+      <img class="w-32 h-32 md:w-48 md:h-auto mx-auto md:mx-0" src="{{ asset('img-book.png') }}" alt="">
       <div class="pt-6 md:p-8 text-center md:text-left space-y-4">
         <blockquote>
           <p class="text-lg font-semibold">
@@ -20,4 +20,4 @@
         </div>
       </div>
     </figure>
-  </div>
+</div>
