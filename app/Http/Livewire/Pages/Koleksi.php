@@ -10,9 +10,17 @@ class Koleksi extends Component
 {
     use WithPagination;
 
+    public $search;
+    public $param = "isbn, judul, penerbit, pengarang";
+
+    protected $queryString = ['search'];
+
     public function render()
     {
-        $books = Vbook::paginate(10);
+        $books = Vbook::query()
+        ->whereRaw("CONCAT($this->param) like '%$this->search%'")
+        ->paginate(10);
         return view('livewire.pages.koleksi', compact('books'));
     }
+    
 }
