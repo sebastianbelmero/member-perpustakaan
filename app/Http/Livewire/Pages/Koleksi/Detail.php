@@ -30,6 +30,6 @@ class Detail extends Component
             'id_user' => Auth::user()->id,
             'id_buku' => $this -> idBuku
         ]);
-        return redirect()->route('home');
+        return redirect()->route('peminjaman');
     }
 }

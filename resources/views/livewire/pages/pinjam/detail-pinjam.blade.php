@@ -45,4 +45,12 @@
         </tr>
     </table>
     <button wire:click="kembali" class="px-2 py-1 bg-blue-500 hover:bg-blue-600 rounded text-white mt-5"><i class="bi bi-arrow-left"></i> Kembali</button>
+    <button onclick="return print() || event.stopImmediatePropagation()" class="px-2 py-1 rounded text-white bg-blue-500 hover:bg-blue-600 focus:outline-none"><i class="bi bi-printer"></i> Print</button>
 </div>
+<style>
+    @media print {
+    header, footer, button{
+        display: none;
+    }
+}
+</style>
